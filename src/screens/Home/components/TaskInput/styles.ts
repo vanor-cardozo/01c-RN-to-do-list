@@ -4,7 +4,7 @@ import { colors } from "../../../../styles/global";
 export const styles = StyleSheet.create({
   form: {
     flexDirection: "row",
-    padding: 24,
+    // padding: 24,
     marginTop: -52,
   },
 

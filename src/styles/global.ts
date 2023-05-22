@@ -13,4 +13,7 @@ export const colors = {
   "gray-100": "#F2F2F2",
 
   danger: "#E25858",
+
+  "inter-700": "Inter_700Bold",
+  "inter-400": "Inter_400Regular",
 };
