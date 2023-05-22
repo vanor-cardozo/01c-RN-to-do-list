@@ -4,7 +4,6 @@ import { colors } from "../../../../styles/global";
 export const styles = StyleSheet.create({
   form: {
     flexDirection: "row",
-    // padding: 24,
     marginTop: -52,
   },
 
@@ -12,6 +11,17 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors["gray-500"],
     borderColor: colors["gray-700"],
+    borderWidth: 1,
+    borderRadius: 5,
+    color: colors["gray-100"],
+    fontSize: 16,
+    paddingLeft: 16,
+  },
+
+  inputSelected: {
+    flex: 1,
+    backgroundColor: colors["gray-500"],
+    borderColor: colors["purple-dark"],
     borderWidth: 1,
     borderRadius: 5,
     color: colors["gray-100"],
