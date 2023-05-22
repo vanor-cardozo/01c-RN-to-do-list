@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { colors } from "../../../../../styles/global";
 import { fonts } from "../../../../../styles/fonts";
 
@@ -10,10 +10,17 @@ type Props = {
 
 export function TaskText({ taskName, checked }: Props) {
   const styleText = checked ? styles.textCrossed : styles.text;
-  return <Text style={styleText}>{taskName}</Text>;
+  return (
+    <View style={styles.container}>
+      <Text style={styleText}>{taskName}</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    width: "90%",
+  },
   textCrossed: {
     color: colors["gray-300"],
     textDecorationLine: "line-through",

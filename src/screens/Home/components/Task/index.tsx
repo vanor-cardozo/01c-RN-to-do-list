@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import { ButtonRounded } from "./components/ButtonRounded";
@@ -6,22 +6,30 @@ import { TaskText } from "./components/TaskText";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../../../styles/global";
 
-export function Task() {
-  const [status, setStatus] = useState(false);
-  function handleCheckTask() {
-    setStatus(!status);
+type Props = {
+  taskId: string;
+  taskName: string;
+  taskStatus: boolean;
+  changeTaskStatus: (taskId: string) => void;
+};
+
+export function Task({
+  taskId,
+  taskName,
+  taskStatus,
+  changeTaskStatus,
+}: Props) {
+  function handlePress() {
+    changeTaskStatus(taskId);
   }
 
   return (
     <View style={styles.taskContainer}>
-      <TouchableOpacity onPress={handleCheckTask}>
+      <TouchableOpacity onPress={handlePress}>
         <View style={styles.buttonAndTaskContainer}>
-          <ButtonRounded checked={status} />
+          <ButtonRounded checked={taskStatus} />
 
-          <TaskText
-            taskName={"nova tarefa adicionada nova tarefa adicionada "}
-            checked={status}
-          />
+          <TaskText taskName={taskName} checked={taskStatus} />
         </View>
       </TouchableOpacity>
 

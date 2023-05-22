@@ -20,6 +20,5 @@ export const styles = StyleSheet.create({
   buttonAndTaskContainer: {
     flexDirection: "row",
     alignItems: "center",
-    width: "90%",
   },
 });
