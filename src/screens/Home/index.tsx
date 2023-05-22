@@ -4,6 +4,7 @@ import { TaskInput } from "./components/TaskInput";
 import { Header } from "./components/Header";
 import { TasksCounter } from "./components/TasksCounter";
 import { Divider } from "./components/Divider";
+import { EmptyList } from "./components/EmptyList";
 
 export function Home() {
   return (
@@ -13,6 +14,7 @@ export function Home() {
         <TaskInput />
         <TasksCounter />
         <Divider />
+        <EmptyList />
       </View>
     </View>
   );
