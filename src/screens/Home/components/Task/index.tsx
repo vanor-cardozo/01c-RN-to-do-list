@@ -11,6 +11,7 @@ type Props = {
   taskName: string;
   taskStatus: boolean;
   changeTaskStatus: (taskId: string) => void;
+  removeTask: (taskId: string) => void;
 };
 
 export function Task({
@@ -18,14 +19,19 @@ export function Task({
   taskName,
   taskStatus,
   changeTaskStatus,
+  removeTask,
 }: Props) {
-  function handlePress() {
+  function handleChangeTask() {
     changeTaskStatus(taskId);
+  }
+
+  function handleRemoveTask() {
+    removeTask(taskId);
   }
 
   return (
     <View style={styles.taskContainer}>
-      <TouchableOpacity onPress={handlePress}>
+      <TouchableOpacity onPress={handleChangeTask}>
         <View style={styles.buttonAndTaskContainer}>
           <ButtonRounded checked={taskStatus} />
 
@@ -33,7 +39,7 @@ export function Task({
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleRemoveTask}>
         <Ionicons name="trash-outline" size={22} color={colors["gray-300"]} />
       </TouchableOpacity>
     </View>
